@@ -1,0 +1,429 @@
+/******************** Genral **************************/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Bree Serif", serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #eed7c1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: #2c1b14;
+}
+/************** Login section ******************/
+
+.login-section {
+  width: 50%;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  background-image: url(./img/top-layout1700W.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+  position: relative;
+}
+.login-section.hide {
+  width: 0;
+}
+.login-box {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff;
+  width: 100%;
+  padding: 2.6rem;
+}
+img {
+  width: 100%;
+}
+
+.login-box.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/************************* Buttons ***************************/
+.btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.btn {
+  font-family: "Bree Serif", serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  transition: all 1s;
+}
+.btn:hover {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+.btn:active {
+  box-shadow: none;
+}
+.signin-btn {
+  background: none;
+  color: #f89b1a;
+  border: 1px solid #f89b1a;
+  transition: all 0.6s;
+}
+
+.signin-btn:hover {
+  background: #fff;
+  color: #de8200;
+  border: 1px solid #f89b1a;
+}
+
+.create-btn {
+  background-color: #f89b1a;
+  color: #fff;
+  transition: all 0.6s;
+}
+.create-btn:hover {
+  background-color: #ad6500;
+}
+
+/************************* Sign in-up Section ***************************/
+
+.sign-in-up-section {
+  width: 0%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #fde3b3;
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.sign-in-up-section.reveal {
+  z-index: 0;
+  width: 100%;
+}
+
+/* form part */
+
+.form-section {
+  width: 0;
+  transition: all 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 4px solid #909ea6;
+  border-right: none;
+}
+
+.sign-in-up-section.reveal .form-section {
+  width: 40%;
+  height: 70%;
+  border-radius: 5px;
+}
+
+.form {
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 15px;
+  width: 0;
+  display: none;
+}
+
+.sign-in-up-section.reveal .form {
+  width: 70%;
+  display: flex;
+}
+
+.form-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  color: #7c004a;
+  font-size: 2rem;
+  font-weight: 600;
+}
+input {
+  width: 100%;
+  padding: 0.7rem 1.2rem;
+  background: none;
+  border: 1px solid #909ea6;
+  color: #7c004a;
+  font-size: 2.2rem;
+}
+input::placeholder {
+  color: #8f013f86;
+}
+input:focus {
+  outline: 1px solid #909ea6;
+}
+label {
+  align-self: flex-start;
+}
+.form-buttons{
+display: flex;
+justify-content: center;
+align-content:center ;
+gap: 10px;
+margin-top: 15px;
+}
+
+
+.form-btn {
+  background-color: #7c004a;
+  color: #fff;
+  width: 40%;
+  align-self: center;
+  letter-spacing: 1px;
+}
+.form-btn:last-child{
+  background-color: #fff;
+  color: #7c004a;
+  border: 1px solid #7c004a;
+
+}
+
+.form-btn:first-child {
+  background-color: #96336e;
+}
+
+/************************* Sign up Section (create account) ***************************/
+.password,
+.confirm{
+  display: none;
+}
+.form.show .password,
+.form.show .confirm{
+  display: block;
+}
+
+/* Background image sign in section */
+
+.sign-in-background-image {
+  width: 0;
+  height: 100%;
+  background-image: url(./img/bottom-layout-1700W.jpg);
+  background-position: 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 1s;
+}
+.sign-in-up-section.reveal .sign-in-background-image {
+  width: 50%;
+}
+
+/**********************  Modal *********************/
+#dialog-message{
+  position: absolute;
+  width: 100%;
+  background-color: #f89c1a82;
+  color: red;
+  text-align: center;
+  padding: 20px;
+  font-size: 3rem;
+  top:0;
+  transform: translateY(-280px);
+
+}
+#dialog-message.modal-clicked{
+  transform: translateY(0);
+}
+
+
+
+/********************** Media Queries *********************/
+/* < 1000 px */
+@media only screen and (max-width: 62.5em) {
+  html {
+    font-size: 50%;
+  }
+  .login-section {
+    width: 80%;
+    height: 70%;
+  }
+  .login-box {
+    padding: 1.4rem 2rem;
+  }
+}
+/*  < 656 px */
+@media only screen and (max-width: 42em) {
+  html {
+    font-size: 50%;
+  }
+  .login-section {
+    width: 100%;
+    height: 100%;
+  }
+  .sign-in-up-section {
+    justify-content: center;
+  }
+  .sign-in-up-section.sign-in-up-section.reveal .sign-in-background-image {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+  .sign-in-up-section.reveal .form-section{
+    background-color: rgba(148, 148, 148, 0.788);
+    border: 4px solid #fff;
+    width: 60%;
+  }
+  input{
+  border: 1px solid #fff;
+
+  }
+
+}
+/* < 460 px */
+@media only screen and (max-width: 28.5em) {
+  .sign-in-up-section.reveal .form-section{
+    width: 85%;
+  }
+}
+
+/* > 1000px **height** */
+@media only screen and (min-height: 62.5em) {
+  .login-section {
+    width: 80%;
+    height: 70%;
+  }
+}
+/* > 1400px **height** */
+
+@media only screen and (min-height: 81.5em) {
+  .login-section {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* < 400px height and 656px < width < 1000px */
+@media only screen and (max-height: 25em) and (min-width: 41em) and (max-width: 62.5rem) {
+  .login-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-size: contain;
+    background-position: right;
+    background-color: #9fd4f5;
+  }
+  .login-box {
+    position: static;
+    width: 50%;
+    height: 100%;
+  }
+}
+/* < 650px width and > 1300px **height** */
+
+@media only screen and  (max-width:42rem) and (min-height: 81.5em) {
+  .sign-in-up-section.reveal .form-section{
+    height: 100%;
+    width: 100%;
+  }
+}
+/********************** Making Images Responsive *********************/
+
+/* login section */
+
+@media only screen and (max-width: 1400px) {
+  /* Large screen, non-retina */
+  .login-section {
+    background-image: url("./img/top-layout1700W.jpg");
+  }
+}
+@media only screen and (max-width: 1000px) {
+  /* Medium screen, non-retina */
+  .login-section {
+    background-image: url("./img/top-layout-1000W.jpg");
+  }
+}
+@media only screen and (max-width: 650px) {
+  /* small screen, non-retina */
+  .login-section {
+    background-image: url("./img/top-layout-600W.jpg");
+  }
+}
+@media only screen and (min-resolution: 192dpi) and (max-width: 1000px),
+  only screen and (min-resolution: 2dppx) and (max-width: 1000px) {
+  /* Medium screen, retina */
+
+  .login-section {
+    background-image: url("./img/top-layout1700W.jpg");
+  }
+}
+@media only screen and (min-resolution: 192dpi) and (max-width: 650px),
+  only screen and (min-resolution: 2dppx) and (max-width: 650px) {
+  /* small screen, retina */
+
+  .login-section {
+    background-image: url("./img/top-layout-1000W.jpg");
+  }
+}
+
+/* sign in section */
+
+@media only screen and (max-width: 1400px) {
+  /* Large screen, non-retina */
+  .sign-in-background-image {
+    background-image: url("./img/bottom-layout-1700W.jpg");
+  }
+}
+@media only screen and (max-width: 1000px) {
+  /* Medium screen, non-retina */
+  .sign-in-background-image {
+    background-image: url("./img/bottom-layout-1000W.jpg");
+  }
+}
+@media only screen and (max-width: 650px) {
+  /* small screen, non-retina */
+  .sign-in-background-image {
+    background-image: url("./img/bottom-layout-600W.jpg");
+  }
+}
+@media only screen and (min-resolution: 192dpi) and (max-width: 1000px),
+  only screen and (min-resolution: 2dppx) and (max-width: 1000px) {
+  /* Medium screen, retina */
+
+  .sign-in-background-image {
+    background-image: url("./img/bottom-layout-1700W.jpg");
+  }
+}
+@media only screen and (min-resolution: 192dpi) and (max-width: 650px),
+  only screen and (min-resolution: 2dppx) and (max-width: 650px) {
+  /* small screen, retina */
+
+  .sign-in-background-image {
+    background-image: url("./img/bottom-layout-1000W.jpg");
+  }
+}
